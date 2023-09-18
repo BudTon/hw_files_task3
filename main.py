@@ -1,29 +1,3 @@
-# with open('3.txt', 'r', encoding='utf-8') as f:
-#     lines = f.readlines()
-#     print(type(lines))
-#     print(len(lines))
-#     print(lines)
-#     for line in lines:
-#         print(line)
-# n = 1
-# while n < 4:
-#     with open(f'{n}.txt', 'r', encoding='utf-8') as f:
-#         data = f.read()
-#         print(len(data))
-#         print(type(data))
-#         print(data)
-#     n +=1
-
-# n = 1
-# while n < 4:
-#     with open(f'{n}.txt', 'r', encoding='utf-8') as f:
-#         lines = f.readlines()
-#         print(len(lines))
-#         print(type(lines))
-#         for line in lines:
-#             print(line)
-#     n +=1
-
 len_list = []
 dict_data = {}
 n = 1
@@ -38,9 +12,16 @@ sort_len_list = sorted(len_list)
 for l in sort_len_list:
     for key in dict_data:
         if l == key:
-            print(dict_data[key])
-            a = dict_data[key]
+            result = dict_data[key]
+            with open('result.txt', 'a', encoding='utf-8') as f:
+                name_file = result['name_file']
+                f.write(f'{name_file}\n')
+                len_file = result['len_file']
+                f.write(f'{len_file}\n')
+                for data in result['data_file']:
+                    f.write(data)
+print('Ok')
 
-            print(a['name_file'])
+
 
 
